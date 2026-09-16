@@ -1,0 +1,193 @@
+---
+---
+
+<section class="py-12 bg-gray-50 font-sans">
+  <div class="max-w-4xl mx-auto px-4">
+    
+    <!-- Cabeçalho da Seção -->
+    <div class="text-center mb-8">
+      <span class="bg-red-600 text-white text-xs font-bold uppercase tracking-widest py-1 px-3 rounded-full shadow-sm">
+        Supermercados Ducastro
+      </span>
+      <h2 class="text-3xl font-extrabold text-gray-900 mt-2">Ofertas da Semana</h2>
+      <p class="text-gray-600 text-sm mt-1">Arraste para o lado e confira nossa economia</p>
+    </div>
+
+    <!-- Container do Carrossel -->
+    <div class="relative">
+      <div 
+        id="carousel-container" 
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 pt-2 px-2 no-scrollbar"
+      >
+
+        <!-- CARD 1: CAPA -->
+        <div class="min-w-[100%] sm:min-w-[450px] h-[400px] snap-center bg-gradient-to-br from-red-600 to-red-700 text-white rounded-3xl p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl font-black">🛒</div>
+          <div>
+            <span class="bg-yellow-400 text-red-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+              Exclusivo Martim de Sá
+            </span>
+            <h3 class="text-4xl font-black mt-4 leading-tight">OFERTA <br/>DO DIA</h3>
+          </div>
+          <div>
+            <p class="text-red-100 text-sm mb-6 max-w-xs">
+              As melhores ofertas da semana reunidas para você economizar de verdade.
+            </p>
+            <div class="flex items-center text-yellow-300 text-sm font-bold gap-2 animate-pulse">
+              <span>Arraste para ver</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: AÇOUGUE -->
+        <div class="min-w-[100%] sm:min-w-[450px] h-[400px] snap-center bg-white text-gray-900 rounded-3xl p-8 flex flex-col justify-between shadow-xl border border-gray-100 relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-yellow-400 text-red-950 font-extrabold text-xs px-3 py-1.5 rounded-full shadow-sm rotate-3">
+            ⭐ Destaque Açougue
+          </div>
+          <div>
+            <span class="text-xs font-bold tracking-widest text-red-600 uppercase">Qualidade Garantida</span>
+            <h3 class="text-2xl font-black text-gray-800 mt-1">Coxão Mole / Carne Bovina</h3>
+            <p class="text-xs text-gray-500 mt-0.5">Peça fresquinha cortada na hora</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-gray-400 block uppercase font-bold">Preço por Kg</span>
+              <div class="flex items-baseline text-red-600 font-black">
+                <span class="text-lg mr-1">R$</span>
+                <span class="text-4xl tracking-tight">41</span>
+                <span class="text-xl">,99</span>
+              </div>
+            </div>
+            <span class="bg-red-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md">Garantir Oferta</span>
+          </div>
+        </div>
+
+        <!-- CARD 3: HORTIFRÚTI -->
+        <div class="min-w-[100%] sm:min-w-[450px] h-[400px] snap-center bg-emerald-50 text-gray-900 rounded-3xl p-8 flex flex-col justify-between shadow-xl border border-emerald-100 relative overflow-hidden">
+          <div class="absolute top-4 right-4 bg-emerald-600 text-white font-extrabold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            🌱 Hortifrúti Fresquinho
+          </div>	  
+          <div>
+            <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase">Direto do Campo</span>
+            <h3 class="text-2xl font-black text-gray-800 mt-1">Frutas Selecionadas</h3>
+            <p class="text-xs text-gray-600 mt-0.5">Qualidade e saúde para a sua mesa</p>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center">
+              <span class="font-bold text-gray-700 text-sm">Mamão Formosa <span class="text-xs font-normal text-gray-400">(kg)</span></span>
+              <span class="font-black text-emerald-700">R$ 3,89</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center">
+              <span class="font-bold text-gray-700 text-sm">Melancia <span class="text-xs font-normal text-gray-400">(kg)</span></span>
+              <span class="font-black text-emerald-700">R$ 2,99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: DESPENSA E CESTA BÁSICA -->
+        <div class="min-w-[100%] sm:min-w-[450px] h-[400px] snap-center bg-white text-gray-900 rounded-3xl p-8 flex flex-col justify-between shadow-xl border border-gray-100 relative">
+          <div class="absolute top-4 right-4 bg-yellow-400 text-red-950 font-extrabold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            🛒 Economia Certa
+          </div>
+          <div>
+            <span class="text-xs font-bold tracking-widest text-red-600 uppercase">Despensa Básica</span>
+            <h3 class="text-2xl font-black text-gray-800 mt-1">Essenciais do Dia a Dia</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-100 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-gray-800 text-sm">Arroz Rei da Panela</p>
+                <span class="text-xs text-gray-400">Tipo 1 - 5kg</span>
+              </div>
+              <span class="font-black text-red-600 text-lg">R$ 16,29</span>
+            </div>
+            <div class="bg-gray-50 p-3 rounded-xl border border-gray-100 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-gray-800 text-sm">Feijão Carioca Saboroso</p>
+                <span class="text-xs text-gray-400">1kg</span>
+              </div>
+              <span class="font-black text-red-600 text-lg">R$ 6,39</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: ENCERRAMENTO -->
+        <div class="min-w-[100%] sm:min-w-[450px] h-[400px] snap-center bg-gray-900 text-white rounded-3xl p-8 flex flex-col justify-between shadow-xl relative overflow-hidden text-center">
+          <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+          <div class="my-auto">
+            <h3 class="text-3xl font-black tracking-tight text-yellow-400">DUCASTRO</h3>
+            <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Supermercados</p>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed max-w-xs mx-auto">
+            Ofertas válidas enquanto durar o estoque! Venha garantir a sua economia hoje mesmo na Loja Martim de Sá.
+          </p>
+          <div class="pt-4 border-t border-gray-800 flex justify-center gap-4 text-xs text-yellow-400 font-bold">
+            <span>@supermercadosducastro</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controles de Navegação -->
+    <div class="flex justify-center items-center gap-4 mt-6">
+      <button id="prev-btn" class="bg-white hover:bg-gray-100 text-gray-800 p-3 rounded-full shadow-md border border-gray-200 transition-all focus:outline-none cursor-pointer">
+        ←
+      </button>
+      <div class="flex gap-2">
+        <span class="dot w-6 h-2.5 rounded-full bg-red-600 transition-all"></span>
+        <span class="dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all"></span>
+        <span class="dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all"></span>
+        <span class="dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all"></span>
+        <span class="dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all"></span>
+      </div>
+      <button id="next-btn" class="bg-white hover:bg-gray-100 text-gray-800 p-3 rounded-full shadow-md border border-gray-200 transition-all focus:outline-none cursor-pointer">
+        →
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  const container = document.getElementById('carousel-container') as HTMLElement;
+  const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+  const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+  const dots = document.querySelectorAll('.dot');
+
+  if (container && prevBtn && nextBtn) {
+    const scrollAmount = 470;
+
+    nextBtn.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    container.addEventListener('scroll', () => {
+      const index = Math.round(container.scrollLeft / scrollAmount);
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.remove('bg-gray-300', 'w-2.5');
+          dot.classList.add('bg-red-600', 'w-6');
+        } else {
+          dot.classList.remove('bg-red-600', 'w-6');
+          dot.classList.add('bg-gray-300', 'w-2.5');
+        }
+      });
+    });
+  }
+</script>

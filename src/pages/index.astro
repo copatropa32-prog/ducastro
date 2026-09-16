@@ -1,0 +1,401 @@
+---
+// Supermercado Ducastro - Home Page Oficial (Tema Claro: Branco e Laranja)
+const whatsappNumber = "5512991422547"; 
+const whatsappMessage = encodeURIComponent("Olá! Vim pelo site do Supermercado Ducastro e quero garantir meu cupom especial do Dia do Cliente!");
+
+const ofertas = [
+  { id: 1, item: "Arroz Tio João 5kg", preco: "24,99", antigo: "29,90", categoria: "despensa", desconto: "16% OFF" },
+  { id: 2, item: "Leite Integral Itambé 1L", preco: "5,49", antigo: "6,80", categoria: "despensa", desconto: "19% OFF" },
+  { id: 3, item: "Carne Bovina Acém kg", preco: "29,90", antigo: "36,90", categoria: "acougue", desconto: "18% OFF" },
+  { id: 4, item: "Refrigerante Coca-Cola 2L", preco: "9,99", antigo: "11,99", categoria: "bebidas", desconto: "16% OFF" },
+  { id: 5, item: "Mamão Formosa kg", preco: "3,89", antigo: "5,50", categoria: "hortifruti", desconto: "30% OFF" },
+  { id: 6, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", desconto: "28% OFF" },
+  { id: 7, item: "Coxinha de Frango (Unidade)", preco: "5,99", antigo: "7,50", categoria: "padaria", desconto: "20% OFF" },
+  { id: 8, item: "Bomba de Doce de Leite", preco: "7,99", antigo: "9,90", categoria: "padaria", desconto: "19% OFF" }
+];
+---
+
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supermercado Ducastro | Casa Branca - Caraguatatuba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <!-- LOGOTIPO REAL -->
+          <a href="#" class="flex items-center space-x-3 group">
+            <div class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center p-1 shadow-sm overflow-hidden">
+              <img src="/logo.png" alt="Supermercado Ducastro" class="w-full h-full object-contain group-hover:scale-105 transition-transform" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-black text-lg tracking-tight text-slate-900 leading-none">DUCASTRO</span>
+              <span class="text-[10px] font-extrabold text-orange-600 tracking-wider mt-0.5">SUPERMERCADOS</span>
+            </div>
+          </a>
+          <span class="text-xs uppercase tracking-widest text-orange-600 font-extrabold hidden md:inline-block px-3 py-1 bg-orange-50 rounded-full border border-orange-200 ml-2">Casa Branca • Caraguá</span>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600">
+          <a href="#diadociente" class="hover:text-orange-600 transition-colors text-orange-600 font-bold">Dia do Cliente</a>
+          <a href="#ofertas" class="hover:text-orange-600 transition-colors">Ofertas</a>
+          <a href="#montalista" class="hover:text-orange-600 transition-colors">Monte sua Lista</a>
+          <a href="#clube" class="hover:text-orange-600 transition-colors">Clube Prêmios</a>
+          <a href="#localizacao" class="hover:text-orange-600 transition-colors">Localização</a>
+        </nav>
+
+        <a 
+          href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold px-6 py-3 rounded-xl shadow-md shadow-orange-500/20 transition-all hover:scale-105 flex items-center space-x-2"
+        >
+          <span>Chamar no WhatsApp</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-orange-50 via-white to-white text-slate-900 py-20 lg:py-28 overflow-hidden border-b border-orange-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="lg:w-2/3 space-y-6">
+          <span class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 border border-orange-200 text-xs uppercase font-extrabold tracking-wider px-4 py-2 rounded-full shadow-sm">
+            <svg class="w-4 h-4 text-orange-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            🛒 | Aqui você garante qualidade e economia!
+          </span>
+          
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none text-slate-900">
+            Você é a parte mais <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">importante da nossa história.</span>
+          </h1>
+          <p class="text-lg text-slate-600 max-w-xl font-normal leading-relaxed">
+            No Dia do Cliente, agradecemos por fazer parte da nossa família no Casa Branca. Aproveite nossas ofertas e monte sua lista de compras direto por aqui!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="#montalista" class="bg-orange-500 hover:bg-orange-600 text-white font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-orange-500/25 transition-all text-center hover:-translate-y-0.5">
+              🛒 Monte sua Lista
+            </a>
+            <a href="#ofertas" class="bg-white hover:bg-orange-50 border border-orange-200 text-slate-700 font-bold px-8 py-4 rounded-2xl transition-all text-center shadow-sm">
+              Ver Ofertas da Semana
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ESPECIAL DIA DO CLIENTE -->
+    <section id="diadociente" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 border border-orange-400 rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden text-white">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <span class="inline-flex items-center gap-2 bg-white text-orange-700 font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+              <span>Homenagem Oficial</span>
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+              Feliz Dia do Cliente!
+            </h2>
+            <p class="text-orange-50 text-base sm:text-lg leading-relaxed font-medium">
+              Preparamos vantagens e condições exclusivas de entrega para toda a região do Bairro Casa Branca e arredores hoje. Garanta seu benefício VIP!
+            </p>
+          </div>
+          <div class="lg:col-span-5 bg-white text-slate-900 border border-orange-100 rounded-2xl p-6 sm:p-8 text-center space-y-6 shadow-2xl">
+            <div class="w-16 h-16 bg-orange-100 border border-orange-200 rounded-2xl flex items-center justify-center mx-auto text-orange-600 text-3xl">
+              🎁
+            </div>
+            <div>
+              <h3 class="text-xl font-black text-slate-900">Garanta o seu Cupom VIP</h3>
+              <p class="text-xs text-slate-500 mt-1">Chame no WhatsApp agora e receba atendimento prioritário.</p>
+            </div>
+            <a 
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Quero resgatar meu benefício especial de Dia do Cliente no Supermercado Ducastro.")}`}
+              target="_blank"
+              class="w-full block bg-orange-500 hover:bg-orange-600 text-white font-black text-sm py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:scale-105 text-center"
+            >
+              Resgatar Presente no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTAS COM FILTROS POR ABAS -->
+    <section id="ofertas" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="text-orange-600 font-bold text-sm uppercase tracking-wider flex items-center gap-2">
+            <svg class="w-4 h-4 text-orange-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            Economia garantida
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Vitrine de Ofertas</h2>
+        </div>
+      </div>
+
+      <!-- Abas de Filtro -->
+      <div class="flex flex-wrap gap-2 mb-8 border-b border-orange-100 pb-4">
+        <button onclick="filterProducts('all')" class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm">Todas</button>
+        <button onclick="filterProducts('acougue')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥩 Açougue</button>
+        <button onclick="filterProducts('hortifruti')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🍎 Hortifrúti</button>
+        <button onclick="filterProducts('despensa')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥫 Despensa</button>
+        <button onclick="filterProducts('padaria')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥖 Padaria</button>
+        <button onclick="filterProducts('bebidas')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🍻 Bebidas</button>
+      </div>
+
+      <!-- Grid de Produtos -->
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {ofertas.map((produto) => (
+          <div class={`product-card bg-white border border-orange-100 rounded-3xl p-6 flex flex-col justify-between shadow-md hover:shadow-xl hover:border-orange-300 transition-all`} data-category={produto.categoria}>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-orange-50 text-orange-700 text-xs font-bold px-3 py-1 rounded-full border border-orange-200 capitalize">
+                  {produto.categoria}
+                </span>
+                <span class="bg-rose-50 text-rose-600 text-xs font-black px-2.5 py-1 rounded-full border border-rose-200">
+                  {produto.desconto}
+                </span>
+              </div>
+              <h3 class="font-extrabold text-slate-900 text-xl mb-1">{produto.item}</h3>
+              <p class="text-xs text-slate-500">Qualidade garantida Ducastro</p>
+            </div>
+            <div class="pt-6 border-t border-slate-100 flex items-end justify-between mt-6">
+              <div>
+                <span class="text-xs text-slate-400 line-through block">R$ {produto.antigo}</span>
+                <span class="text-2xl font-black text-orange-600">R$ {produto.preco}</span>
+              </div>
+              <a 
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Quero aproveitar a oferta: ${produto.item} por R$ ${produto.preco}`)}`}
+                target="_blank"
+                class="bg-orange-500 hover:bg-orange-600 text-white font-black text-xs px-4 py-2.5 rounded-xl transition-all shadow-md shadow-orange-500/20"
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SIMULADOR DE "MONTE SUA LISTA" -->
+    <section id="montalista" class="py-16 bg-orange-50/60 border-y border-orange-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-3 mb-10">
+          <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Praticidade Total</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Monte sua Cesta Econômica</h2>
+          <p class="text-slate-600 text-sm max-w-xl mx-auto">Selecione os itens que precisa para a sua casa. O valor será somado automaticamente para você enviar direto no WhatsApp!</p>
+        </div>
+
+        <div class="bg-white border border-orange-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+          <div id="checklist-items" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {ofertas.map((produto) => (
+              <label class="flex items-center justify-between p-4 rounded-2xl bg-orange-50/40 border border-orange-100 hover:border-orange-300 cursor-pointer transition-all">
+                <div class="flex items-center space-x-3">
+                  <input 
+                    type="checkbox" 
+                    value={produto.item} 
+                    data-price={produto.preco}
+                    class="item-checkbox w-5 h-5 accent-orange-500 rounded cursor-pointer"
+                  />
+                  <div>
+                    <span class="block font-bold text-slate-800 text-sm">{produto.item}</span>
+                    <span class="text-xs text-orange-600 font-bold">R$ {produto.preco}</span>
+                  </div>
+                </div>
+              </label>
+            ))}
+          </div>
+
+          <div class="border-t border-slate-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-500 block">Total Estimado da Lista:</span>
+              <span id="total-price" class="text-3xl font-black text-orange-600">R$ 0,00</span>
+            </div>
+            <button 
+              id="send-list-btn"
+              class="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-black px-8 py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all text-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled
+            >
+              Enviar Lista para o WhatsApp 🚀
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLUBE PRÊMIOS -->
+    <section id="clube" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600 border border-orange-400 rounded-3xl p-8 sm:p-14 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 text-white">
+          <div class="space-y-4 max-w-xl text-center lg:text-left">
+            <span class="inline-flex items-center gap-2 bg-white text-orange-700 text-xs font-extrabold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
+              Vantagens Exclusivas
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight">Clube Prêmios Ducastro</h2>
+            <p class="text-orange-50 text-base font-medium">
+              Cadastre-se de graça, acumule pontos a cada compra no supermercado e concorra a prêmios todos os meses!
+            </p>
+          </div>
+          <a 
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Quero me cadastrar no Clube Prêmios Ducastro!")}`}
+            target="_blank"
+            class="w-full sm:w-auto bg-white hover:bg-orange-50 text-orange-700 font-black px-8 py-4 rounded-2xl shadow-xl transition-all text-center whitespace-nowrap hover:scale-105"
+          >
+            Quero Participar Gratuitamente
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao" class="py-20 bg-orange-50/40 border-t border-orange-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">Venha nos Visitar</h2>
+          <p class="text-slate-600 mt-2">Rua Antônio Henrique de Mesquita, 17 - Casa Branca, Caraguatatuba - SP</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="bg-white p-8 sm:p-10 rounded-3xl border border-orange-100 space-y-6 shadow-xl">
+            <div class="flex items-start space-x-4">
+              <div class="bg-orange-100 p-3 rounded-2xl border border-orange-200 text-orange-600 shrink-0 font-bold">📍</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Endereço</h3>
+                <p class="text-slate-600 mt-1">Rua Antônio Henrique de Mesquita, 17<br>Casa Branca, Caraguatatuba - SP, 11663-000</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="bg-orange-100 p-3 rounded-2xl border border-orange-200 text-orange-600 shrink-0 font-bold">⏰</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900">Horário de Funcionamento</h3>
+                <p class="text-slate-600 mt-1">Segunda a Sábado: das 07h às 22h<br>Domingos: das 07h às 20h</p>
+              </div>
+            </div>
+          </div>
+          <!-- MAPA REAL DO GOOGLE MAPS EMBED -->
+          <div class="h-80 rounded-3xl overflow-hidden border border-orange-200 shadow-sm">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.757134305886!2d-45.412!3d-23.623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd7fd728d7a123%3A0x123456789!2sR.%20Ant%C3%B4nio%20Henrique%20de%20Mesquita%2C%2017%20-%20Casa%20Branca%2C%20Caraguatatuba%20-%20SP%2C%2011663-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white text-slate-600 py-12 border-t border-orange-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div class="space-y-1">
+          <span class="text-slate-900 font-black text-xl tracking-tight">DUCASTRO</span>
+          <p class="text-xs text-slate-500">© 2026 Supermercado Ducastro. Todos os direitos reservados.</p>
+        </div>
+        <div class="text-xs text-orange-700 font-bold px-3 py-1 bg-orange-50 rounded-full border border-orange-200">
+          Feito com alta performance para o Casa Branca • Caraguá
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+      function filterProducts(category: string) {
+        const cards = document.querySelectorAll('.product-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        buttons.forEach(btn => {
+          btn.classList.remove('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+          btn.classList.add('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+        });
+
+        // @ts-ignore
+        event.currentTarget.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+        // @ts-ignore
+        event.currentTarget.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'all' || cardCat === category) {
+            // @ts-ignore
+            card.style.display = 'flex';
+          } else {
+            // @ts-ignore
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // @ts-ignore
+      window.filterProducts = filterProducts;
+
+      const checkboxes = document.querySelectorAll('.item-checkbox');
+      const totalPriceEl = document.getElementById('total-price');
+      const sendListBtn = document.getElementById('send-list-btn') as HTMLButtonElement;
+      const phoneNum = "5512991422547";
+
+      function updateListTotal() {
+        let total = 0;
+        let selectedItems: string[] = [];
+
+        checkboxes.forEach(chk => {
+          // @ts-ignore
+          if (chk.checked) {
+            // @ts-ignore
+            total += parseFloat(chk.getAttribute('data-price').replace(',', '.'));
+            // @ts-ignore
+            selectedItems.push(chk.value);
+          }
+        });
+
+        if (totalPriceEl) {
+          totalPriceEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        if (selectedItems.length > 0) {
+          sendListBtn.removeAttribute('disabled');
+          const message = encodeURIComponent(`Olá! Gostaria de encomendar a seguinte lista de compras:\n\n- ${selectedItems.join('\n- ')}\n\n*Total Estimado: R$ ${total.toFixed(2).replace('.', ',')}*`);
+          sendListBtn.onclick = () => {
+            window.open(`https://wa.me/${phoneNum}?text=${message}`, '_blank');
+          };
+        } else {
+          sendListBtn.setAttribute('disabled', 'true');
+        }
+      }
+
+      checkboxes.forEach(chk => {
+        chk.addEventListener('change', updateListTotal);
+      });
+    </script>
+
+  </body>
+</html>
