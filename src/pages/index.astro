@@ -1,17 +1,33 @@
 ---
 // Supermercado Ducastro - Home Page Oficial (Tema Claro: Branco e Laranja)
 const whatsappNumber = "5512991422547"; 
-const whatsappMessage = encodeURIComponent("Olá! Vim pelo site do Supermercado Ducastro e quero garantir meu cupom especial do Dia do Cliente!");
+const whatsappMessage = encodeURIComponent("Olá! Vim pelo site do Supermercado Ducastro e quero garantir meu cupom especial da Semana do Cliente!");
 
 const ofertas = [
-  { id: 1, item: "Arroz Tio João 5kg", preco: "24,99", antigo: "29,90", categoria: "despensa", desconto: "16% OFF" },
-  { id: 2, item: "Leite Integral Itambé 1L", preco: "5,49", antigo: "6,80", categoria: "despensa", desconto: "19% OFF" },
-  { id: 3, item: "Carne Bovina Acém kg", preco: "29,90", antigo: "36,90", categoria: "acougue", desconto: "18% OFF" },
-  { id: 4, item: "Refrigerante Coca-Cola 2L", preco: "9,99", antigo: "11,99", categoria: "bebidas", desconto: "16% OFF" },
-  { id: 5, item: "Mamão Formosa kg", preco: "3,89", antigo: "5,50", categoria: "hortifruti", desconto: "30% OFF" },
-  { id: 6, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", desconto: "28% OFF" },
-  { id: 7, item: "Coxinha de Frango (Unidade)", preco: "5,99", antigo: "7,50", categoria: "padaria", desconto: "20% OFF" },
-  { id: 8, item: "Bomba de Doce de Leite", preco: "7,99", antigo: "9,90", categoria: "padaria", desconto: "19% OFF" }
+  // Açougue
+  { id: 1, item: "Acém Bovina kg", preco: "39,99", antigo: "45,90", categoria: "acougue", imagem: "/imagens/acougue/acem-bovino-sem-osso-resfriado-pedaco-kg.webp", desconto: "13% OFF" },
+  { id: 2, item: "Costela Boi Ripa kg", preco: "26,99", antigo: "32,90", categoria: "acougue", imagem: "/imagens/acougue/costela-boi-ripa.webp", desconto: "18% OFF" },
+  { id: 3, item: "Bife Especial kg", preco: "39,99", antigo: "46,90", categoria: "acougue", imagem: "/imagens/acougue/bife-especial.webp", desconto: "15% OFF" },
+  { id: 4, item: "Linguiça Toscana Aurora kg", preco: "21,59", antigo: "25,90", categoria: "acougue", imagem: "/imagens/acougue/linguica-toscana-aurora.webp", desconto: "17% OFF" },
+  
+  // Hortifrúti
+  { id: 5, item: "Mamão Papaia kg", preco: "4,59", antigo: "6,50", categoria: "hortifruti", imagem: "/imagens/hortifruti/mamao-papaia.webp", desconto: "29% OFF" },
+  { id: 6, item: "Maçã Gala kg", preco: "4,99", antigo: "6,90", categoria: "hortifruti", imagem: "/imagens/hortifruti/maca-gala.webp", desconto: "28% OFF" },
+  { id: 7, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", imagem: "/imagens/hortifruti/melancia.webp", desconto: "28% OFF" },
+  { id: 8, item: "Tomate Italiano kg", preco: "8,99", antigo: "11,90", categoria: "hortifruti", imagem: "/imagens/hortifruti/tomate-italiano.webp", desconto: "24% OFF" },
+
+  // Alimentos / Despensa
+  { id: 9, item: "Arroz Saboroso Tipo 1 5kg", preco: "18,99", antigo: "22,90", categoria: "alimentos", imagem: "/imagens/alimentos/arroz-saboroso-tipo-1-5kg.webp", desconto: "17% OFF" },
+  { id: 10, item: "Feijão Carioca Solito 1kg", preco: "8,39", antigo: "10,50", categoria: "alimentos", imagem: "/imagens/alimentos/feijao-carioca-solito-tipo-1-1kg.webp", desconto: "20% OFF" },
+  { id: 11, item: "Macarrão Parafuso Camil 1kg", preco: "2,99", antigo: "4,20", categoria: "alimentos", imagem: "/imagens/alimentos/macarrao-parafuso-camil-1kg.webp", desconto: "28% OFF" },
+  { id: 12, item: "Nescau Lata 350ml", preco: "9,99", antigo: "12,50", categoria: "alimentos", imagem: "/imagens/alimentos/nescau-350ml.webp", desconto: "20% OFF" },
+
+  // Bebidas
+  { id: 13, item: "Suco Laranja Life 900ml", preco: "9,99", antigo: "12,90", categoria: "bebidas", imagem: "/imagens/bebidas/suco-laranja-life-900ml.webp", desconto: "22% OFF" },
+
+  // Higiene
+  { id: 14, item: "Desodorante Monange 150ml", preco: "10,99", antigo: "14,50", categoria: "higiene", imagem: "/imagens/higiene/desodorante-monange-150ml.webp", desconto: "24% OFF" },
+  { id: 15, item: "Kit Shampoo + Condicionador Skala", preco: "16,89", antigo: "21,90", categoria: "higiene", imagem: "/imagens/higiene/kit-shampoo-e-condicionador-amor-poderoso-325ml.webp", desconto: "23% OFF" }
 ];
 ---
 
@@ -54,7 +70,6 @@ const ofertas = [
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-          <!-- LOGOTIPO REAL -->
           <a href="#" class="flex items-center space-x-3 group">
             <div class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center p-1 shadow-sm overflow-hidden">
               <img src="/logo.png" alt="Supermercado Ducastro" class="w-full h-full object-contain group-hover:scale-105 transition-transform" />
@@ -68,8 +83,9 @@ const ofertas = [
         </div>
 
         <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600">
-          <a href="#diadociente" class="hover:text-orange-600 transition-colors text-orange-600 font-bold">Dia do Cliente</a>
-          <a href="#ofertas" class="hover:text-orange-600 transition-colors">Ofertas</a>
+          <a href="#diadociente" class="hover:text-orange-600 transition-colors text-orange-600 font-bold">Semana do Cliente</a>
+          <a href="#carrossel" class="hover:text-orange-600 transition-colors">Ofertas Imbatíveis</a>
+          <a href="#ofertas" class="hover:text-orange-600 transition-colors">Todas as Ofertas</a>
           <a href="#montalista" class="hover:text-orange-600 transition-colors">Monte sua Lista</a>
           <a href="#clube" class="hover:text-orange-600 transition-colors">Clube Prêmios</a>
           <a href="#localizacao" class="hover:text-orange-600 transition-colors">Localização</a>
@@ -87,45 +103,100 @@ const ofertas = [
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative bg-gradient-to-b from-orange-50 via-white to-white text-slate-900 py-20 lg:py-28 overflow-hidden border-b border-orange-100">
+    <section class="relative bg-gradient-to-b from-orange-50 via-white to-white text-slate-900 py-16 lg:py-24 overflow-hidden border-b border-orange-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="lg:w-2/3 space-y-6">
           <span class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 border border-orange-200 text-xs uppercase font-extrabold tracking-wider px-4 py-2 rounded-full shadow-sm">
             <svg class="w-4 h-4 text-orange-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-            🛒 | Aqui você garante qualidade e economia!
+            🛒 | Ofertas válidas de 16 a 20/09/26 ou enquanto durarem os estoques!
           </span>
-          
+
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none text-slate-900">
             Você é a parte mais <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">importante da nossa história.</span>
           </h1>
           <p class="text-lg text-slate-600 max-w-xl font-normal leading-relaxed">
-            No Dia do Cliente, agradecemos por fazer parte da nossa família no Casa Branca. Aproveite nossas ofertas e monte sua lista de compras direto por aqui!
+            Na Semana do Cliente, agradecemos por fazer parte da nossa família no Casa Branca. Aproveite nossas ofertas e monte sua lista de compras direto por aqui!
           </p>
           <div class="flex flex-col sm:flex-row gap-4 pt-4">
             <a href="#montalista" class="bg-orange-500 hover:bg-orange-600 text-white font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-orange-500/25 transition-all text-center hover:-translate-y-0.5">
               🛒 Monte sua Lista
             </a>
-            <a href="#ofertas" class="bg-white hover:bg-orange-50 border border-orange-200 text-slate-700 font-bold px-8 py-4 rounded-2xl transition-all text-center shadow-sm">
-              Ver Ofertas da Semana
+            <a href="#carrossel" class="bg-white hover:bg-orange-50 border border-orange-200 text-slate-700 font-bold px-8 py-4 rounded-2xl transition-all text-center shadow-sm">
+              Ver Ofertas Imbatíveis
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO ESPECIAL DIA DO CLIENTE -->
-    <section id="diadociente" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- CARROSSEL DE OFERTAS IMBATÍVEIS -->
+    <section id="carrossel" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <span class="text-orange-600 font-bold text-sm uppercase tracking-wider flex items-center gap-2">
+            🔥 Destaques da Semana
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Ofertas Imbatíveis</h2>
+        </div>
+        <!-- Botões de Navegação do Carrossel -->
+        <div class="hidden sm:flex items-center gap-2">
+          <button onclick="scrollCarousel('left')" class="w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
+            ←
+          </button>
+          <button onclick="scrollCarousel('right')" class="w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
+            →
+          </button>
+        </div>
+      </div>
+
+      <!-- Container Deslizante do Carrossel -->
+      <div id="carousel-container" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 px-1">
+        {ofertas.slice(0, 8).map((produto) => (
+          <div class="min-w-[280px] sm:min-w-[300px] max-w-[300px] bg-white border border-orange-200 rounded-3xl p-6 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:border-orange-400 transition-all shrink-0">
+            <div>
+              <div class="w-full h-48 bg-orange-50/50 rounded-2xl mb-4 overflow-hidden border border-orange-100 flex items-center justify-center p-2 relative">
+                <span class="absolute top-2 right-2 bg-rose-500 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-sm">
+                  {produto.desconto}
+                </span>
+                <img src={produto.imagem} alt={produto.item} class="w-full h-full object-contain hover:scale-105 transition-transform" />
+              </div>
+              <span class="bg-orange-50 text-orange-700 text-xs font-bold px-3 py-1 rounded-full border border-orange-200 capitalize inline-block mb-2">
+                {produto.categoria}
+              </span>
+              <h3 class="font-extrabold text-slate-900 text-lg mb-1 leading-snug">{produto.item}</h3>
+              <p class="text-xs text-slate-500">Supermercado Ducastro</p>
+            </div>
+            <div class="pt-6 border-t border-slate-100 flex items-end justify-between mt-6">
+              <div>
+                <span class="text-xs text-slate-400 line-through block">R$ {produto.antigo}</span>
+                <span class="text-2xl font-black text-orange-600">R$ {produto.preco}</span>
+              </div>
+              <a 
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Quero aproveitar a oferta imbatível: ${produto.item} por R$ ${produto.preco}`)}`}
+                target="_blank"
+                class="bg-orange-500 hover:bg-orange-600 text-white font-black text-xs px-4 py-2.5 rounded-xl transition-all shadow-md shadow-orange-500/20"
+              >
+                Pedir
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SEÇÃO ESPECIAL SEMANA DO CLIENTE -->
+    <section id="diadociente" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 border border-orange-400 rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden text-white">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-7 space-y-6">
             <span class="inline-flex items-center gap-2 bg-white text-orange-700 font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-              <span>Homenagem Oficial</span>
+              <span>Especial de Aniversário / Ofertas</span>
             </span>
             <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-              Feliz Dia do Cliente!
+              Semana do Cliente Ducastro!
             </h2>
             <p class="text-orange-50 text-base sm:text-lg leading-relaxed font-medium">
-              Preparamos vantagens e condições exclusivas de entrega para toda a região do Bairro Casa Branca e arredores hoje. Garanta seu benefício VIP!
+              Fazemos entregas nas compras acima de R$ 300,00 (consulte localidades atendidas) e parcelamos sua compra em até 3x no cartão. Garanta suas ofertas agora!
             </p>
           </div>
           <div class="lg:col-span-5 bg-white text-slate-900 border border-orange-100 rounded-2xl p-6 sm:p-8 text-center space-y-6 shadow-2xl">
@@ -137,11 +208,11 @@ const ofertas = [
               <p class="text-xs text-slate-500 mt-1">Chame no WhatsApp agora e receba atendimento prioritário.</p>
             </div>
             <a 
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Quero resgatar meu benefício especial de Dia do Cliente no Supermercado Ducastro.")}`}
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Quero resgatar meu benefício especial da Semana do Cliente no Supermercado Ducastro.")}`}
               target="_blank"
               class="w-full block bg-orange-500 hover:bg-orange-600 text-white font-black text-sm py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all transform hover:scale-105 text-center"
             >
-              Resgatar Presente no WhatsApp
+              Resgatar no WhatsApp
             </a>
           </div>
         </div>
@@ -156,18 +227,18 @@ const ofertas = [
             <svg class="w-4 h-4 text-orange-600 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
             Economia garantida
           </span>
-          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Vitrine de Ofertas</h2>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Todas as Ofertas</h2>
         </div>
       </div>
 
       <!-- Abas de Filtro -->
       <div class="flex flex-wrap gap-2 mb-8 border-b border-orange-100 pb-4">
-        <button onclick="filterProducts('all')" class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm">Todas</button>
-        <button onclick="filterProducts('acougue')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥩 Açougue</button>
-        <button onclick="filterProducts('hortifruti')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🍎 Hortifrúti</button>
-        <button onclick="filterProducts('despensa')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥫 Despensa</button>
-        <button onclick="filterProducts('padaria')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥖 Padaria</button>
-        <button onclick="filterProducts('bebidas')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🍻 Bebidas</button>
+        <button onclick="filterProducts('all', this)" class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm">Todas</button>
+        <button onclick="filterProducts('acougue', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥩 Açougue</button>
+        <button onclick="filterProducts('hortifruti', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🍎 Hortifrúti</button>
+        <button onclick="filterProducts('alimentos', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥫 Alimentos</button>
+        <button onclick="filterProducts('bebidas', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🧃 Bebidas</button>
+        <button onclick="filterProducts('higiene', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🧴 Higiene</button>
       </div>
 
       <!-- Grid de Produtos -->
@@ -175,7 +246,10 @@ const ofertas = [
         {ofertas.map((produto) => (
           <div class={`product-card bg-white border border-orange-100 rounded-3xl p-6 flex flex-col justify-between shadow-md hover:shadow-xl hover:border-orange-300 transition-all`} data-category={produto.categoria}>
             <div>
-              <div class="flex items-center justify-between mb-4">
+              <div class="w-full h-48 bg-orange-50/50 rounded-2xl mb-4 overflow-hidden border border-orange-100 flex items-center justify-center p-2">
+                <img src={produto.imagem} alt={produto.item} class="w-full h-full object-contain hover:scale-105 transition-transform" />
+              </div>
+              <div class="flex items-center justify-between mb-3">
                 <span class="bg-orange-50 text-orange-700 text-xs font-bold px-3 py-1 rounded-full border border-orange-200 capitalize">
                   {produto.categoria}
                 </span>
@@ -183,7 +257,7 @@ const ofertas = [
                   {produto.desconto}
                 </span>
               </div>
-              <h3 class="font-extrabold text-slate-900 text-xl mb-1">{produto.item}</h3>
+              <h3 class="font-extrabold text-slate-900 text-lg mb-1 leading-snug">{produto.item}</h3>
               <p class="text-xs text-slate-500">Qualidade garantida Ducastro</p>
             </div>
             <div class="pt-6 border-t border-slate-100 flex items-end justify-between mt-6">
@@ -214,7 +288,7 @@ const ofertas = [
         </div>
 
         <div class="bg-white border border-orange-200 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
-          <div id="checklist-items" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div id="checklist-items" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[400px] overflow-y-auto pr-2">
             {ofertas.map((produto) => (
               <label class="flex items-center justify-between p-4 rounded-2xl bg-orange-50/40 border border-orange-100 hover:border-orange-300 cursor-pointer transition-all">
                 <div class="flex items-center space-x-3">
@@ -279,7 +353,7 @@ const ofertas = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
           <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">Venha nos Visitar</h2>
-          <p class="text-slate-600 mt-2">Rua Antônio Henrique de Mesquita, 17 - Casa Branca, Caraguatatuba - SP</p>
+          <p class="text-slate-600 mt-2">Rua Antônio Henrique de Mesquita, 17 - Jardim Casa Branca, Caraguatatuba - SP</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div class="bg-white p-8 sm:p-10 rounded-3xl border border-orange-100 space-y-6 shadow-xl">
@@ -287,7 +361,7 @@ const ofertas = [
               <div class="bg-orange-100 p-3 rounded-2xl border border-orange-200 text-orange-600 shrink-0 font-bold">📍</div>
               <div>
                 <h3 class="text-lg font-bold text-slate-900">Endereço</h3>
-                <p class="text-slate-600 mt-1">Rua Antônio Henrique de Mesquita, 17<br>Casa Branca, Caraguatatuba - SP, 11663-000</p>
+                <p class="text-slate-600 mt-1">Rua Antônio Henrique de Mesquita, 17<br>Jardim Casa Branca, Caraguatatuba - SP, 11663-000</p>
               </div>
             </div>
             <div class="flex items-start space-x-4">
@@ -329,7 +403,20 @@ const ofertas = [
 
     <!-- Scripts de Interatividade -->
     <script>
-      function filterProducts(category: string) {
+      // Função para rolar o Carrossel
+      function scrollCarousel(direction) {
+        const container = document.getElementById('carousel-container');
+        const scrollAmount = 320;
+        if (direction === 'left') {
+          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+      window.scrollCarousel = scrollCarousel;
+
+      // Filtro por Abas da Vitrine
+      function filterProducts(category, btnElement) {
         const cards = document.querySelectorAll('.product-card');
         const buttons = document.querySelectorAll('.filter-btn');
 
@@ -338,41 +425,36 @@ const ofertas = [
           btn.classList.add('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
         });
 
-        // @ts-ignore
-        event.currentTarget.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
-        // @ts-ignore
-        event.currentTarget.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+        if (btnElement) {
+          btnElement.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+          btnElement.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+        }
 
         cards.forEach(card => {
           const cardCat = card.getAttribute('data-category');
           if (category === 'all' || cardCat === category) {
-            // @ts-ignore
             card.style.display = 'flex';
           } else {
-            // @ts-ignore
             card.style.display = 'none';
           }
         });
       }
-
-      // @ts-ignore
       window.filterProducts = filterProducts;
 
+      // Simulador de Lista no WhatsApp
       const checkboxes = document.querySelectorAll('.item-checkbox');
       const totalPriceEl = document.getElementById('total-price');
-      const sendListBtn = document.getElementById('send-list-btn') as HTMLButtonElement;
+      const sendListBtn = document.getElementById('send-list-btn');
       const phoneNum = "5512991422547";
 
       function updateListTotal() {
         let total = 0;
-        let selectedItems: string[] = [];
+        let selectedItems = [];
 
         checkboxes.forEach(chk => {
-          // @ts-ignore
           if (chk.checked) {
-            // @ts-ignore
-            total += parseFloat(chk.getAttribute('data-price').replace(',', '.'));
-            // @ts-ignore
+            const priceStr = chk.getAttribute('data-price') || "0";
+            total += parseFloat(priceStr.replace(',', '.'));
             selectedItems.push(chk.value);
           }
         });
