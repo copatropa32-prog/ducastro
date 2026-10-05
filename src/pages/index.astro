@@ -10,11 +10,11 @@ const ofertas = [
   { id: 3, item: "Bife Especial kg", preco: "39,99", antigo: "46,90", categoria: "acougue", imagem: "/imagens/acougue/bife-especial.webp", desconto: "15% OFF" },
   { id: 4, item: "Linguiça Toscana Aurora kg", preco: "21,59", antigo: "25,90", categoria: "acougue", imagem: "/imagens/acougue/linguica-toscana-aurora.webp", desconto: "17% OFF" },
   
-  // Hortifrúti
-  { id: 5, item: "Mamão Papaia kg", preco: "4,59", antigo: "6,50", categoria: "hortifruti", imagem: "/imagens/hortifruti/mamao-papaia.webp", desconto: "29% OFF" },
-  { id: 6, item: "Maçã Gala kg", preco: "4,99", antigo: "6,90", categoria: "hortifruti", imagem: "/imagens/hortifruti/maca-gala.webp", desconto: "28% OFF" },
-  { id: 7, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", imagem: "/imagens/hortifruti/melancia.webp", desconto: "28% OFF" },
-  { id: 8, item: "Tomate Italiano kg", preco: "8,99", antigo: "11,90", categoria: "hortifruti", imagem: "/imagens/hortifruti/tomate-italiano.webp", desconto: "24% OFF" },
+  // Hortifrúti - CORRIGIDO: hortifruit (não hortifruti)
+  { id: 5, item: "Mamão Papaia kg", preco: "4,59", antigo: "6,50", categoria: "hortifruti", imagem: "/imagens/hortifruit/mamao-papaia.webp", desconto: "29% OFF" },
+  { id: 6, item: "Maçã Gala kg", preco: "4,99", antigo: "6,90", categoria: "hortifruti", imagem: "/imagens/hortifruit/maca-gala.webp", desconto: "28% OFF" },
+  { id: 7, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", imagem: "/imagens/hortifruit/melancia.webp", desconto: "28% OFF" },
+  { id: 8, item: "Tomate Italiano kg", preco: "8,99", antigo: "11,90", categoria: "hortifruti", imagem: "/imagens/hortifruit/tomate-italiano.webp", desconto: "24% OFF" },
 
   // Alimentos / Despensa
   { id: 9, item: "Arroz Saboroso Tipo 1 5kg", preco: "18,99", antigo: "22,90", categoria: "alimentos", imagem: "/imagens/alimentos/arroz-saboroso-tipo-1-5kg.webp", desconto: "17% OFF" },
@@ -138,7 +138,6 @@ const ofertas = [
           </span>
           <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Ofertas Imbatíveis</h2>
         </div>
-        <!-- Botões de Navegação do Carrossel -->
         <div class="hidden sm:flex items-center gap-2">
           <button onclick="scrollCarousel('left')" class="w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
             ←
@@ -149,7 +148,6 @@ const ofertas = [
         </div>
       </div>
 
-      <!-- Container Deslizante do Carrossel -->
       <div id="carousel-container" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-4 px-1">
         {ofertas.slice(0, 8).map((produto) => (
           <div class="min-w-[280px] sm:min-w-[300px] max-w-[300px] bg-white border border-orange-200 rounded-3xl p-6 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:border-orange-400 transition-all shrink-0">
@@ -231,7 +229,6 @@ const ofertas = [
         </div>
       </div>
 
-      <!-- Abas de Filtro -->
       <div class="flex flex-wrap gap-2 mb-8 border-b border-orange-100 pb-4">
         <button onclick="filterProducts('all', this)" class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm">Todas</button>
         <button onclick="filterProducts('acougue', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥩 Açougue</button>
@@ -241,7 +238,6 @@ const ofertas = [
         <button onclick="filterProducts('higiene', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🧴 Higiene</button>
       </div>
 
-      <!-- Grid de Produtos -->
       <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {ofertas.map((produto) => (
           <div class={`product-card bg-white border border-orange-100 rounded-3xl p-6 flex flex-col justify-between shadow-md hover:shadow-xl hover:border-orange-300 transition-all`} data-category={produto.categoria}>
@@ -372,7 +368,6 @@ const ofertas = [
               </div>
             </div>
           </div>
-          <!-- MAPA REAL DO GOOGLE MAPS EMBED -->
           <div class="h-80 rounded-3xl overflow-hidden border border-orange-200 shadow-sm">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.757134305886!2d-45.412!3d-23.623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd7fd728d7a123%3A0x123456789!2sR.%20Ant%C3%B4nio%20Henrique%20de%20Mesquita%2C%2017%20-%20Casa%20Branca%2C%20Caraguatatuba%20-%20SP%2C%2011663-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
@@ -403,7 +398,6 @@ const ofertas = [
 
     <!-- Scripts de Interatividade -->
     <script>
-      // Função para rolar o Carrossel
       function scrollCarousel(direction) {
         const container = document.getElementById('carousel-container');
         const scrollAmount = 320;
@@ -415,7 +409,6 @@ const ofertas = [
       }
       window.scrollCarousel = scrollCarousel;
 
-      // Filtro por Abas da Vitrine
       function filterProducts(category, btnElement) {
         const cards = document.querySelectorAll('.product-card');
         const buttons = document.querySelectorAll('.filter-btn');
@@ -441,7 +434,6 @@ const ofertas = [
       }
       window.filterProducts = filterProducts;
 
-      // Simulador de Lista no WhatsApp
       const checkboxes = document.querySelectorAll('.item-checkbox');
       const totalPriceEl = document.getElementById('total-price');
       const sendListBtn = document.getElementById('send-list-btn');
