@@ -1,31 +1,25 @@
 ---
-// Supermercado Ducastro - Home Page Oficial
 const whatsappNumber = "5512991422547"; 
 const whatsappMessage = encodeURIComponent("Olá! Vim pelo site do Supermercado Ducastro e quero garantir meu cupom especial da Semana do Cliente!");
 
 const ofertas = [
-  // Açougue
   { id: 1, item: "Acém Bovina kg", preco: "39,99", antigo: "45,90", categoria: "acougue", imagem: "/imagens/acougue/acem-bovino-sem-osso-resfriado-pedaco-kg.webp", desconto: "13% OFF" },
   { id: 2, item: "Costela Boi Ripa kg", preco: "26,99", antigo: "32,90", categoria: "acougue", imagem: "/imagens/acougue/costela-boi-ripa.webp", desconto: "18% OFF" },
   { id: 3, item: "Bife Especial kg", preco: "39,99", antigo: "46,90", categoria: "acougue", imagem: "/imagens/acougue/bife-especial.webp", desconto: "15% OFF" },
   { id: 4, item: "Linguiça Toscana Aurora kg", preco: "21,59", antigo: "25,90", categoria: "acougue", imagem: "/imagens/acougue/linguica-toscana-aurora.webp", desconto: "17% OFF" },
   
-  // Hortifrúti
   { id: 5, item: "Mamão Papaia kg", preco: "4,59", antigo: "6,50", categoria: "hortifruti", imagem: "/imagens/hortifruit/mamao-papaia.webp", desconto: "29% OFF" },
   { id: 6, item: "Maçã Gala kg", preco: "4,99", antigo: "6,90", categoria: "hortifruti", imagem: "/imagens/hortifruit/maca-gala.webp", desconto: "28% OFF" },
   { id: 7, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", imagem: "/imagens/hortifruit/melancia.webp", desconto: "28% OFF" },
   { id: 8, item: "Tomate Italiano kg", preco: "8,99", antigo: "11,90", categoria: "hortifruti", imagem: "/imagens/hortifruit/tomate-italiano.webp", desconto: "24% OFF" },
 
-  // Alimentos
   { id: 9, item: "Arroz Saboroso Tipo 1 5kg", preco: "18,99", antigo: "22,90", categoria: "alimentos", imagem: "/imagens/alimentos/arroz-saboroso-tipo-1-5kg.webp", desconto: "17% OFF" },
   { id: 10, item: "Feijão Carioca Solito 1kg", preco: "8,39", antigo: "10,50", categoria: "alimentos", imagem: "/imagens/alimentos/feijao-carioca-solito-tipo-1-1kg.webp", desconto: "20% OFF" },
   { id: 11, item: "Macarrão Parafuso Camil 1kg", preco: "2,99", antigo: "4,20", categoria: "alimentos", imagem: "/imagens/alimentos/macarrao-parafuso-camil-1kg.webp", desconto: "28% OFF" },
   { id: 12, item: "Nescau Lata 350ml", preco: "9,99", antigo: "12,50", categoria: "alimentos", imagem: "/imagens/alimentos/nescau-350ml.webp", desconto: "20% OFF" },
 
-  // Bebidas
   { id: 13, item: "Suco Laranja Life 900ml", preco: "9,99", antigo: "12,90", categoria: "bebidas", imagem: "/imagens/bebidas/suco-laranja-life-900ml.webp", desconto: "22% OFF" },
 
-  // Higiene
   { id: 14, item: "Desodorante Monange 150ml", preco: "10,99", antigo: "14,50", categoria: "higiene", imagem: "/imagens/higiene/desodorante-monange-150ml.webp", desconto: "24% OFF" },
   { id: 15, item: "Kit Shampoo + Condicionador Skala", preco: "16,89", antigo: "21,90", categoria: "higiene", imagem: "/imagens/higiene/kit-shampoo-e-condicionador-amor-poderoso-325ml.webp", desconto: "23% OFF" }
 ];
@@ -136,10 +130,10 @@ const ofertas = [
           <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Ofertas Imbatíveis</h2>
         </div>
         <div class="hidden sm:flex items-center gap-2">
-          <button class="scroll-btn left w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
+          <button onclick="scrollLeft()" class="scroll-left w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
             ←
           </button>
-          <button class="scroll-btn right w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
+          <button onclick="scrollRight()" class="scroll-right w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
             →
           </button>
         </div>
@@ -225,12 +219,12 @@ const ofertas = [
       </div>
 
       <div class="flex flex-wrap gap-2 mb-8 border-b border-orange-100 pb-4">
-        <button class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm" data-filter="all">Todas</button>
-        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="acougue">🥩 Açougue</button>
-        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="hortifruti">🍎 Hortifrúti</button>
-        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="alimentos">🥫 Alimentos</button>
-        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="bebidas">🧃 Bebidas</button>
-        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="higiene">🧴 Higiene</button>
+        <button onclick="filterCategory('all')" class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm" data-filter="all">Todas</button>
+        <button onclick="filterCategory('acougue')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="acougue">🥩 Açougue</button>
+        <button onclick="filterCategory('hortifruti')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="hortifruti">🍎 Hortifrúti</button>
+        <button onclick="filterCategory('alimentos')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="alimentos">🥫 Alimentos</button>
+        <button onclick="filterCategory('bebidas')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="bebidas">🧃 Bebidas</button>
+        <button onclick="filterCategory('higiene')" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="higiene">🧴 Higiene</button>
       </div>
 
       <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -388,49 +382,38 @@ const ofertas = [
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Scroll do carrossel
-        const leftBtn = document.querySelector('.scroll-btn.left');
-        const rightBtn = document.querySelector('.scroll-btn.right');
+      function scrollLeft() {
         const container = document.getElementById('carousel-container');
+        container.scrollBy({ left: -320, behavior: 'smooth' });
+      }
 
-        if (leftBtn && rightBtn && container) {
-          leftBtn.addEventListener('click', () => {
-            container.scrollBy({ left: -320, behavior: 'smooth' });
-          });
-          rightBtn.addEventListener('click', () => {
-            container.scrollBy({ left: 320, behavior: 'smooth' });
-          });
-        }
+      function scrollRight() {
+        const container = document.getElementById('carousel-container');
+        container.scrollBy({ left: 320, behavior: 'smooth' });
+      }
 
-        // Filtro de produtos
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('.product-card');
+      function filterCategory(category) {
+        const cards = document.querySelectorAll('.product-card');
+        const buttons = document.querySelectorAll('.filter-btn');
 
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', function() {
-            const category = this.getAttribute('data-filter');
-            
-            filterBtns.forEach(b => {
-              b.classList.remove('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
-              b.classList.add('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
-            });
-            
-            this.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
-            this.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
-            
-            productCards.forEach(card => {
-              const cardCat = card.getAttribute('data-category');
-              if (category === 'all' || cardCat === category) {
-                card.style.display = 'flex';
-              } else {
-                card.style.display = 'none';
-              }
-            });
-          });
+        buttons.forEach(btn => {
+          btn.classList.remove('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+          btn.classList.add('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
         });
 
-        // Lista de compras
+        event.target.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+        event.target.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
         const checkboxes = document.querySelectorAll('.item-checkbox');
         const totalPriceEl = document.getElementById('total-price');
         const sendListBtn = document.getElementById('send-list-btn');
