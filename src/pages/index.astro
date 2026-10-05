@@ -136,10 +136,10 @@ const ofertas = [
           <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Ofertas Imbatíveis</h2>
         </div>
         <div class="hidden sm:flex items-center gap-2">
-          <button onclick="scrollCarousel('left')" class="w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
+          <button class="scroll-btn left w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
             ←
           </button>
-          <button onclick="scrollCarousel('right')" class="w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
+          <button class="scroll-btn right w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
             →
           </button>
         </div>
@@ -225,12 +225,12 @@ const ofertas = [
       </div>
 
       <div class="flex flex-wrap gap-2 mb-8 border-b border-orange-100 pb-4">
-        <button onclick="filterProducts('all', this)" class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm">Todas</button>
-        <button onclick="filterProducts('acougue', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥩 Açougue</button>
-        <button onclick="filterProducts('hortifruti', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🍎 Hortifrúti</button>
-        <button onclick="filterProducts('alimentos', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🥫 Alimentos</button>
-        <button onclick="filterProducts('bebidas', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🧃 Bebidas</button>
-        <button onclick="filterProducts('higiene', this)" class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer">🧴 Higiene</button>
+        <button class="filter-btn active bg-orange-500 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm" data-filter="all">Todas</button>
+        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="acougue">🥩 Açougue</button>
+        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="hortifruti">🍎 Hortifrúti</button>
+        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="alimentos">🥫 Alimentos</button>
+        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="bebidas">🧃 Bebidas</button>
+        <button class="filter-btn bg-orange-50 text-slate-700 hover:bg-orange-100 font-bold text-xs px-5 py-2.5 rounded-xl transition-all border border-orange-200 cursor-pointer" data-filter="higiene">🧴 Higiene</button>
       </div>
 
       <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -388,74 +388,84 @@ const ofertas = [
     </footer>
 
     <script>
-      function scrollCarousel(direction) {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Scroll do carrossel
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
         const container = document.getElementById('carousel-container');
-        const scrollAmount = 320;
-        if (direction === 'left') {
-          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        } else {
-          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+
+        if (leftBtn && rightBtn && container) {
+          leftBtn.addEventListener('click', () => {
+            container.scrollBy({ left: -320, behavior: 'smooth' });
+          });
+          rightBtn.addEventListener('click', () => {
+            container.scrollBy({ left: 320, behavior: 'smooth' });
+          });
         }
-      }
 
-      function filterProducts(category, btnElement) {
-        const cards = document.querySelectorAll('.product-card');
-        const buttons = document.querySelectorAll('.filter-btn');
+        // Filtro de produtos
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
 
-        buttons.forEach(btn => {
-          btn.classList.remove('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
-          btn.classList.add('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const category = this.getAttribute('data-filter');
+            
+            filterBtns.forEach(b => {
+              b.classList.remove('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+              b.classList.add('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+            });
+            
+            this.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
+            this.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
+            
+            productCards.forEach(card => {
+              const cardCat = card.getAttribute('data-category');
+              if (category === 'all' || cardCat === category) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
         });
 
-        if (btnElement) {
-          btnElement.classList.remove('bg-orange-50', 'text-slate-700', 'border', 'border-orange-200');
-          btnElement.classList.add('bg-orange-500', 'text-white', 'font-extrabold', 'shadow-sm');
-        }
+        // Lista de compras
+        const checkboxes = document.querySelectorAll('.item-checkbox');
+        const totalPriceEl = document.getElementById('total-price');
+        const sendListBtn = document.getElementById('send-list-btn');
+        const phoneNum = "5512991422547";
 
-        cards.forEach(card => {
-          const cardCat = card.getAttribute('data-category');
-          if (category === 'all' || cardCat === category) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
+        function updateListTotal() {
+          let total = 0;
+          let selectedItems = [];
+
+          checkboxes.forEach(chk => {
+            if (chk.checked) {
+              const priceStr = chk.getAttribute('data-price') || "0";
+              total += parseFloat(priceStr.replace(',', '.'));
+              selectedItems.push(chk.value);
+            }
+          });
+
+          if (totalPriceEl) {
+            totalPriceEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
           }
-        });
-      }
 
-      const checkboxes = document.querySelectorAll('.item-checkbox');
-      const totalPriceEl = document.getElementById('total-price');
-      const sendListBtn = document.getElementById('send-list-btn');
-      const phoneNum = "5512991422547";
-
-      function updateListTotal() {
-        let total = 0;
-        let selectedItems = [];
+          if (selectedItems.length > 0) {
+            sendListBtn.removeAttribute('disabled');
+            const message = encodeURIComponent(`Olá! Gostaria de encomendar a seguinte lista de compras:\n\n- ${selectedItems.join('\n- ')}\n\n*Total Estimado: R$ ${total.toFixed(2).replace('.', ',')}*`);
+            sendListBtn.onclick = () => {
+              window.open(`https://wa.me/${phoneNum}?text=${message}`, '_blank');
+            };
+          } else {
+            sendListBtn.setAttribute('disabled', 'true');
+          }
+        }
 
         checkboxes.forEach(chk => {
-          if (chk.checked) {
-            const priceStr = chk.getAttribute('data-price') || "0";
-            total += parseFloat(priceStr.replace(',', '.'));
-            selectedItems.push(chk.value);
-          }
+          chk.addEventListener('change', updateListTotal);
         });
-
-        if (totalPriceEl) {
-          totalPriceEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
-        }
-
-        if (selectedItems.length > 0) {
-          sendListBtn.removeAttribute('disabled');
-          const message = encodeURIComponent(`Olá! Gostaria de encomendar a seguinte lista de compras:\n\n- ${selectedItems.join('\n- ')}\n\n*Total Estimado: R$ ${total.toFixed(2).replace('.', ',')}*`);
-          sendListBtn.onclick = () => {
-            window.open(`https://wa.me/${phoneNum}?text=${message}`, '_blank');
-          };
-        } else {
-          sendListBtn.setAttribute('disabled', 'true');
-        }
-      }
-
-      checkboxes.forEach(chk => {
-        chk.addEventListener('change', updateListTotal);
       });
     </script>
 
