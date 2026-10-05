@@ -1,5 +1,5 @@
 ---
-// Supermercado Ducastro - Home Page Oficial (Tema Claro: Branco e Laranja)
+// Supermercado Ducastro - Home Page Oficial
 const whatsappNumber = "5512991422547"; 
 const whatsappMessage = encodeURIComponent("Olá! Vim pelo site do Supermercado Ducastro e quero garantir meu cupom especial da Semana do Cliente!");
 
@@ -10,13 +10,13 @@ const ofertas = [
   { id: 3, item: "Bife Especial kg", preco: "39,99", antigo: "46,90", categoria: "acougue", imagem: "/imagens/acougue/bife-especial.webp", desconto: "15% OFF" },
   { id: 4, item: "Linguiça Toscana Aurora kg", preco: "21,59", antigo: "25,90", categoria: "acougue", imagem: "/imagens/acougue/linguica-toscana-aurora.webp", desconto: "17% OFF" },
   
-  // Hortifrúti - CORRIGIDO: hortifruit (não hortifruti)
+  // Hortifrúti
   { id: 5, item: "Mamão Papaia kg", preco: "4,59", antigo: "6,50", categoria: "hortifruti", imagem: "/imagens/hortifruit/mamao-papaia.webp", desconto: "29% OFF" },
   { id: 6, item: "Maçã Gala kg", preco: "4,99", antigo: "6,90", categoria: "hortifruti", imagem: "/imagens/hortifruit/maca-gala.webp", desconto: "28% OFF" },
   { id: 7, item: "Melancia kg", preco: "2,99", antigo: "4,20", categoria: "hortifruti", imagem: "/imagens/hortifruit/melancia.webp", desconto: "28% OFF" },
   { id: 8, item: "Tomate Italiano kg", preco: "8,99", antigo: "11,90", categoria: "hortifruti", imagem: "/imagens/hortifruit/tomate-italiano.webp", desconto: "24% OFF" },
 
-  // Alimentos / Despensa
+  // Alimentos
   { id: 9, item: "Arroz Saboroso Tipo 1 5kg", preco: "18,99", antigo: "22,90", categoria: "alimentos", imagem: "/imagens/alimentos/arroz-saboroso-tipo-1-5kg.webp", desconto: "17% OFF" },
   { id: 10, item: "Feijão Carioca Solito 1kg", preco: "8,39", antigo: "10,50", categoria: "alimentos", imagem: "/imagens/alimentos/feijao-carioca-solito-tipo-1-1kg.webp", desconto: "20% OFF" },
   { id: 11, item: "Macarrão Parafuso Camil 1kg", preco: "2,99", antigo: "4,20", categoria: "alimentos", imagem: "/imagens/alimentos/macarrao-parafuso-camil-1kg.webp", desconto: "28% OFF" },
@@ -66,7 +66,6 @@ const ofertas = [
   </head>
   <body class="bg-white text-slate-800 antialiased selection:bg-orange-500 selection:text-white">
 
-    <!-- HEADER -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <div class="flex items-center space-x-3">
@@ -102,7 +101,6 @@ const ofertas = [
       </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="relative bg-gradient-to-b from-orange-50 via-white to-white text-slate-900 py-16 lg:py-24 overflow-hidden border-b border-orange-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="lg:w-2/3 space-y-6">
@@ -129,7 +127,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- CARROSSEL DE OFERTAS IMBATÍVEIS -->
     <section id="carrossel" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between mb-8">
         <div>
@@ -182,7 +179,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- SEÇÃO ESPECIAL SEMANA DO CLIENTE -->
     <section id="diadociente" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 border border-orange-400 rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden text-white">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -217,7 +213,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- OFERTAS COM FILTROS POR ABAS -->
     <section id="ofertas" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <div>
@@ -274,7 +269,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- SIMULADOR DE "MONTE SUA LISTA" -->
     <section id="montalista" class="py-16 bg-orange-50/60 border-y border-orange-100">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center space-y-3 mb-10">
@@ -320,7 +314,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- CLUBE PRÊMIOS -->
     <section id="clube" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600 border border-orange-400 rounded-3xl p-8 sm:p-14 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8 text-white">
@@ -344,7 +337,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- LOCALIZAÇÃO -->
     <section id="localizacao" class="py-20 bg-orange-50/40 border-t border-orange-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
@@ -383,7 +375,6 @@ const ofertas = [
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-white text-slate-600 py-12 border-t border-orange-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
         <div class="space-y-1">
@@ -396,7 +387,6 @@ const ofertas = [
       </div>
     </footer>
 
-    <!-- Scripts de Interatividade -->
     <script>
       function scrollCarousel(direction) {
         const container = document.getElementById('carousel-container');
@@ -407,7 +397,6 @@ const ofertas = [
           container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
       }
-      window.scrollCarousel = scrollCarousel;
 
       function filterProducts(category, btnElement) {
         const cards = document.querySelectorAll('.product-card');
@@ -432,7 +421,6 @@ const ofertas = [
           }
         });
       }
-      window.filterProducts = filterProducts;
 
       const checkboxes = document.querySelectorAll('.item-checkbox');
       const totalPriceEl = document.getElementById('total-price');
