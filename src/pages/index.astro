@@ -136,7 +136,6 @@ const ofertas = [
           <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1 tracking-tight">Ofertas Imbatíveis</h2>
         </div>
         <div class="hidden sm:flex items-center gap-2">
-          <!-- ATUALIZADO: Adicionados IDs específicos para os botões do carrossel -->
           <button id="carousel-left-btn" class="w-12 h-12 rounded-2xl bg-orange-50 hover:bg-orange-500 hover:text-white border border-orange-200 text-orange-600 flex items-center justify-center font-bold text-xl transition-all shadow-sm cursor-pointer">
             ←
           </button>
@@ -390,7 +389,7 @@ const ofertas = [
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // ATUALIZADO: Scroll do carrossel utilizando IDs precisos
+        // Carrossel de Ofertas Imbatíveis
         const leftBtn = document.getElementById('carousel-left-btn');
         const rightBtn = document.getElementById('carousel-right-btn');
         const container = document.getElementById('carousel-container');
@@ -431,7 +430,7 @@ const ofertas = [
           });
         });
 
-        // Lista de compras
+        // Lista de compras / Monte sua Cesta Econômica
         const checkboxes = document.querySelectorAll('.item-checkbox');
         const totalPriceEl = document.getElementById('total-price');
         const sendListBtn = document.getElementById('send-list-btn');
@@ -444,7 +443,9 @@ const ofertas = [
           checkboxes.forEach(chk => {
             if (chk.checked) {
               const priceStr = chk.getAttribute('data-price') || "0";
-              total += parseFloat(priceStr.replace(',', '.'));
+              // Substitui vírgula por ponto para conversão correta em float
+              const cleanPrice = parseFloat(priceStr.replace(',', '.')) || 0;
+              total += cleanPrice;
               selectedItems.push(chk.value);
             }
           });
@@ -461,6 +462,7 @@ const ofertas = [
             };
           } else {
             sendListBtn.setAttribute('disabled', 'true');
+            sendListBtn.onclick = null;
           }
         }
 
